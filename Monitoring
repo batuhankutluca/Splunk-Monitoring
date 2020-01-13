@@ -1,0 +1,25 @@
+-- Registry Autorun --
+[WinRegMon://hklm_run1]
+disabled = 0
+hive = \\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\.*
+proc = .*
+type = set|create|delete|rename
+index = windows23
+
+[WinRegMon://hklm_run2]
+disabled = 0
+hive = HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\.*
+proc = .*
+type = set|create|delete|rename
+index = windows23
+-- Registry Autorun --
+
+-- Linux Bash History --
+[monitor:///home/*/.bash_history]
+index=linux
+sourcetype=linux_bash_history
+
+[monitor:///root/.bash_history]
+index=linux
+sourcetype=linux_bash_history
+-- Linux Bash History --
